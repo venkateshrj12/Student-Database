@@ -1,0 +1,27 @@
+<h1>Students List</h1>
+<p>The below table have all details of the students</p>
+
+<table>
+  <thead>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email ID</th>
+    <th>Mobile Number</th>
+    <th>City</th>
+    <th colspan="3">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @students.each do |student| %>
+  <tr>
+    <td><%= student.first_name %></td>
+    <td><%= student.last_name %></td>
+    <td><%= student.email %></td>
+    <td><%= student.mobile_number %></td>
+    <td><%= student.city_name %></td>
+    <td><%= link_to "View", student %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
