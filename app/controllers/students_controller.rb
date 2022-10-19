@@ -4,12 +4,12 @@ class StudentsController < ApplicationController
   end
 
   def new
-    @student = Student.new
+    @std = Student.new
   end
 
   def create
-    @student = Student.new(student_params)
-    if @student.save
+    @std = Student.new(student_params)
+    if @std.save
       redirect_to students_path
     else
       render :new
@@ -18,9 +18,9 @@ class StudentsController < ApplicationController
   private
   def student_params
     params.require(:student).permit(:first_name, :last_name, :email, :mobile_number, :city_name)
-  end
+    end
 
-  def show
-    @student = Student.find(params[:id])
+  public def show
+    @std = Student.find(params[:id])
   end
 end

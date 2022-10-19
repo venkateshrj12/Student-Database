@@ -4,6 +4,7 @@
 <table>
   <thead>
   <tr>
+    <th>ID No</th>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Email ID</th>
@@ -13,14 +14,15 @@
   </tr>
   </thead>
   <tbody>
-  <% @students.each do |student| %>
+  <% @students.each do |s| %>
   <tr>
-    <td><%= student.first_name %></td>
-    <td><%= student.last_name %></td>
-    <td><%= student.email %></td>
-    <td><%= student.mobile_number %></td>
-    <td><%= student.city_name %></td>
-    <td><%= link_to "View", student %></td>
+    <td><%= s.id %></td>
+    <td><%= s.first_name %></td>
+    <td><%= s.last_name %></td>
+    <td><%= s.email %></td>
+    <td><%= s.mobile_number %></td>
+    <td><%= s.city_name %></td>
+    <td><%= link_to "View", s %></td>
   </tr>
   <% end %>
   </tbody>
