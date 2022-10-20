@@ -2,7 +2,7 @@
 <%= link_to "Home", root_path %> |
 <%= link_to "Create new", new_student_path  %> |
 <%= link_to "List of Students", students_path %> |
-<%= link_to "Back", student_path %> |
+<%= link_to "Back", student_path %>
 
 <%= form_with model: @std do |form| %>
 
@@ -39,9 +39,10 @@
     <%=form.text_field :city_name %>
   </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+<p></p>
 
+  <%= form.submit %>
+
+  <%= link_to "Cancel", student_path %>
 
 <% end %>

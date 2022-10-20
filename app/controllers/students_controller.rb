@@ -35,7 +35,6 @@ class StudentsController < ApplicationController
       render :edit
     end
   end
-
   def destroy
     @std = Student.find(params[:id])
     @std.destroy
