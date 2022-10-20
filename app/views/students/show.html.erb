@@ -1,9 +1,15 @@
 
-<h1>Student Details</h1>
+<h1>Details of <%= @std.first_name %> <%= @std.last_name %></h1>
+<%= link_to "Home", root_path %> |
+<%= link_to "Edit", edit_student_path %> |
+<%= link_to "Create new", new_student_path  %> |
+<%= link_to "List of Students", students_path %> |
+
 
 <p><strong>First Name: </strong><%= @std.first_name %></p>
-<p>  </p>
-<p>  </p>
-<p>  </p>
+<p><strong>Last Name: </strong><%= @std.last_name %></p>
+<p><strong>Email ID: </strong><%= @std.email %></p>
+<p><strong>Mobile Number: </strong><%= @std.mobile_number %></p>
+<p><strong>City: </strong><%= @std.city_name %></p>
 
-<%= link_to "Back", students_path %>
+

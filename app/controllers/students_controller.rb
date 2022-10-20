@@ -15,12 +15,32 @@ class StudentsController < ApplicationController
       render :new
     end
   end
-  private
-  def student_params
-    params.require(:student).permit(:first_name, :last_name, :email, :mobile_number, :city_name)
-    end
 
-  public def show
+  private def student_params
+    params.require(:student).permit(:first_name, :last_name, :email, :mobile_number, :city_name)
+  end
+
+  def show
     @std = Student.find(params[:id])
   end
+
+  def edit
+    @std = Student.find(params[:id])
+  end
+  def update
+    @std = Student.find(params[:id])
+    if @std.update(student_params)
+      redirect_to student_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @std = Student.find(params[:id])
+    @std.destroy
+    redirect_to students_path
+  end
+
+
 end
